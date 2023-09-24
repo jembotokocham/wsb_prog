@@ -29,3 +29,8 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+Route::get('wsb', function(){
+    return view('wsb',['firstName'=>'Janusz','lastName'=>'Nowak']);
+});
+
