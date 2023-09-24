@@ -45,3 +45,4 @@ Route::get('/address/{city}/{street?}', function(string $city, string $street=nu
 Route::get('show_wsb',[\App\Http\Controllers\WsbController::class,'index']);
 Route::get('pages/{drive}',[\App\Http\Controllers\PageController::class,'show']);
 
+Route::view('userform','userform');
