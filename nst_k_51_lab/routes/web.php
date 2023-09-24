@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -34,3 +35,11 @@ Route::get('wsb', function(){
     return view('wsb',['firstName'=>'Janusz','lastName'=>'Nowak']);
 });
 
+Route::get('/address/{city}/{street?}', function(string $city, string $street=null){
+    if ($street!=null){
+    echo "Miasto: $city, Ulica: $street";}
+    else
+        echo "Miasto: $city, Ulica: -";
+});
+
+Route::get('show_wsb',[\App\Http\Controllers\WsbController::class,'index']);
