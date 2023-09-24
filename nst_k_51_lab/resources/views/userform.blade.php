@@ -53,7 +53,11 @@
                                 <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
                                    <h3>Informacje o użytkowniku</h3>
                                 <form action="UserController" method="post">
+                                    @csrf
                                     <input type="text" name="firsName"><br><br>
+                                    <input type="text" name="lastName"><br><br>
+                                    <input type="password" name="pass"><br><br>
+                                    <input type="email"><br><br>
                                     <input type="submit" value="Wyświetl dane">
                                 </form>
                                 </p>

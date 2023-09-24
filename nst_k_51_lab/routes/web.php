@@ -46,3 +46,4 @@ Route::get('show_wsb',[\App\Http\Controllers\WsbController::class,'index']);
 Route::get('pages/{drive}',[\App\Http\Controllers\PageController::class,'show']);
 
 Route::view('userform','userform');
+Route::post("UserController",[\App\Http\Controllers\UserController::class,'account']);
