@@ -8,8 +8,10 @@
     <title>Użytkownicy</title>
 </head>
 <body>
-<form action="" method="get">
-    <input type="text" name="firstName" placeholder="Podaj imię" autofocus><br>
+<form action="FormController" method="get">
+    <input type="text" name="firstName" placeholder="Podaj imię" autofocus><br><br>
+    <input type="text" name="lastName" placeholder="Podaj nazwisko" autofocus><br><br>
+    <input type="submit" value="Wyślij"><br><br>
 </form>
 </body>
 </html>

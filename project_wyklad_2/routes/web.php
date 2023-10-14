@@ -66,3 +66,7 @@ Route::prefix('admin')->group(function () {
         return "Strona domowa";
     });
 });
+
+Route::view('userform','forms.form_user');
+
+Route::get('FormController',[\App\Http\Controllers\FormController::class, 'showform']);
