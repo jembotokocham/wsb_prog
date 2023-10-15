@@ -52,20 +52,13 @@
 
                                 <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
                                 <h3 style="color: white;">Informacje o użytkowniku</h3>
-                                <h2 class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                                @if($errors->any())
-                                    <ul>
-                                        @foreach($errors->all() as $error)
-                                            <li>{{$error}}</li>
-                                        @endforeach
-                                    </ul>
-                                @endif</h2>
+                                <h2 class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed"></h2>
                                 <form action="{{ route('form.submit') }}" method="post" class="mt-4 text-gray-500 dark:text-gray-400 text-lg leading-relaxed">
                                     @csrf
-                                    <input type="text" name="firstName" placeholder="Podaj imię" style="background-color: #111828;"><br><br>
-                                    <input type="text" name="lastName" placeholder="Podaj nazwisko"style="background-color: #111828;">@error('lastName') {{$message}}@enderror<br><br>
-                                    <input type="password" name="pass" placeholder="Podaj hasło"style="background-color: #111828;"><br><br>
-                                    <input type="email" name="email" placeholder="Podaj e-mail"style="background-color: #111828;">@error('email') {{$message}}@enderror<br><br>
+                                    <input type="text" name="firstName" placeholder="Podaj imię" value="{{old('firstName')}}" style="background-color: #111828;">@error('firstName') {{$message}}@enderror<br><br>
+                                    <input type="text" name="lastName" placeholder="Podaj nazwisko" value="{{old('lastName')}}" style="background-color: #111828;">@error('lastName') {{$message}}@enderror<br><br>
+                                    <input type="password" name="pass" placeholder="Podaj hasło" style="background-color: #111828;">@error('password') {{$message}}@enderror<br><br>
+                                    <input type="email" name="email" placeholder="Podaj e-mail" value="{{old('email')}}" style="background-color: #111828;">@error('email') {{$message}}@enderror<br><br>
                                     <input type="radio" id="male" name="gender" value="male">
                                     <label for="male">Mężczyzna</label><br>
                                     <input type="radio" id="female" name="gender" value="female">
