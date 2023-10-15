@@ -47,5 +47,7 @@ Route::get('pages/{drive}',[\App\Http\Controllers\PageController::class,'show'])
 
 Route::view('userform','userform');
 Route::get("UserController",[\App\Http\Controllers\UserController::class,'account']);
+Route::post('/form', [\App\Http\Controllers\FormController::class, 'submit'])->name('form.submit');
 
 //dokończyć błędy oraz tłumaczenie komunikatów walidacji na polskie komunikaty
+
