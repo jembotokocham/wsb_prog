@@ -8,9 +8,34 @@
     <title>Użytkownicy</title>
 </head>
 <body>
-<form action="FormController" method="get">
-    <input type="text" name="firstName" placeholder="Podaj imię" autofocus><br><br>
-    <input type="text" name="lastName" placeholder="Podaj nazwisko" autofocus><br><br>
+@if($errors->any())
+    <ul>
+        @foreach($errors->all() as $error)
+            <li>
+                {{$error}}
+            </li>
+ @endforeach
+    </ul>
+ @endif
+
+<form action="FormController" method="post">
+    @csrf
+    <input type="text" name="firstName" placeholder="Podaj imię" value="{{old('firstName')}}" autofocus>
+    @error('firstName')
+    {{$message}}
+    @enderror<br><br>
+    <input type="text" name="lastName" placeholder="Podaj nazwisko" value="{{old('lastName')}}" autofocus>
+    @error('lastName')
+    {{$message}}
+    @enderror<br><br>
+    <input type="email" name="mail" placeholder="Podaj e-mail" value="{{old('mail')}}" autofocus>
+    @error('mail')
+    {{$message}}
+    @enderror<br><br><input type="reemail" name="remail" placeholder="Podaj ponownie e-mail" value="{{old('remail')}}" autofocus>
+    @error('remail')
+    {{$message}}
+    @enderror<br><br>
+
     <input type="submit" value="Wyślij"><br><br>
 </form>
 </body>
