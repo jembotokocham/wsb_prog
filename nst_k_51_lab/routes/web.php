@@ -53,3 +53,4 @@ Route::get('/showusers', [\App\Http\Controllers\ShowTableUsersController::class,
 
 //dokończyć błędy oraz tłumaczenie komunikatów walidacji na polskie komunikaty
 
+Route::get('show_users',[\App\Http\Controllers\ShowUserController::class, 'ShowUser']);
